@@ -1,0 +1,16 @@
+{
+  "name": "react-portal-component",
+  "version": "1.2.0",
+  "keywords": ["react", "portal", "react-dom" ],
+  "author": "Fredes",
+  "devDependencies": {
+    "@types/react": "^16.9.14",
+    "@types/react-dom": "^16.9.4",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
