@@ -15,6 +15,9 @@
     "css": "node-sass ./src/sass/style.scss ./dist/css/style.css",
     "lint": "prettier --write \"src/**/*.tsx\""
   },
+  "publishConfig": { 
+    "registry": "https://npm.pkg.github.com/" 
+  },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",

@@ -6,7 +6,9 @@ class App extends React.PureComponent {
   render() {
     return (
       <div>
-        <button onClick={() => portal(MyModal, { id: 'modal' })}>
+        <button
+          onClick={() => portal(MyModal, { id: 'modal', title: 'My Modal' })}
+        >
           Open Modal
         </button>
       </div>
@@ -14,10 +16,10 @@ class App extends React.PureComponent {
   }
 }
 
-function MyModal({ onClose }) {
+function MyModal({ onClose, id, title }) {
   return (
-    <Modal onClose={onClose}>
-      <h3>My Modal</h3>
+    <Modal id={id} onClose={onClose}>
+      <h3>{title}</h3>
       <p>Lore ipsum on dolor...</p>
       <button onClick={onClose}>Ok</button>
     </Modal>
