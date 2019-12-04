@@ -2,7 +2,9 @@
 
 Demo: https://ricardofredes.github.io/react-portal-component/samples/
 
-`npm i --save rc-portal` or `yarn add rc-portal`
+```npm i rc-portal```
+or 
+```yarn add rc-portal```
 
 Portal react is a solution for those who need to show components with a short life cycle. Example:
 - Modal
@@ -51,14 +53,14 @@ You can pass props when calling your portal component:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import portal from '../dist/index.js';
+import portal from 'rc-portal';
 
 class App extends React.PureComponent {
   render() {
     return (
       <div>
         <button
-          onClick={() => portal(MyPortalComponent, { title: 'It's awesome!' })}
+          onClick={() => portal(MyPortalComponent, { title: "It's awesome!" })}
         >
           Open Modal
         </button>
