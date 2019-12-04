@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-export default function portal(Component: Function, props: object = {}): object {
+export default function portal(Component: Function, props: object = {}, wrapper: any): object {
   if (!Component) return { error: 'Must have a Component' }
-  const parent = document.createElement('div')
+  const parent = wrapper || document.createElement('div')
   document.body.appendChild(parent)
   function close() {
     document.body.removeChild(parent)

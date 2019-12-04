@@ -1,0 +1,40 @@
+._Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+}
+._ModalWrapper {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+._ModalCloseIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background: url('./close.svg') no-repeat center;
+  }
+}
+._ModalContent {
+  padding: 16px;
+}
