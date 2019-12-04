@@ -1,6 +1,6 @@
 {
   "name": "rc-portal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.tsx",
   "keywords": [
     "react",
@@ -14,9 +14,6 @@
     "build:samples": "webpack",
     "css": "node-sass ./src/sass/style.scss ./dist/css/style.css",
     "lint": "prettier --write \"src/**/*.tsx\""
-  },
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/" 
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
