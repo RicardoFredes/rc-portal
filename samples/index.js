@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import portal, { Modal } from '../dist/index.js';
+import rcPortal, { Modal } from '../dist/index.js';
 
 class App extends React.PureComponent {
   handleClick() {
@@ -13,10 +13,13 @@ class App extends React.PureComponent {
     return (
       <div>
         <button
-          onClick={() => portal(MyModal, { id: 'modal', title: 'My Modal' })}
+          onClick={() =>
+            rcPortal(MyPortalComponent, { id: 'modal', title: 'My Modal' })
+          }
         >
           Open Modal
         </button>
+        <br />
         <button onClick={this.handleClick.bind(this)}>
           Modal auto close after 5s
         </button>
@@ -25,7 +28,7 @@ class App extends React.PureComponent {
   }
 }
 
-function MyModal({ onClose, id, title }) {
+function MyPortalComponent({ onClose, id, title }) {
   return (
     <Modal id={id} onClose={onClose}>
       <h3>{title}</h3>
