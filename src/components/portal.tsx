@@ -9,7 +9,9 @@ export default function portal(
   if (!Component) return { error: 'Must have a Component' };
   const parent = wrapper || document.createElement('div');
   document.body.appendChild(parent);
-  const close = () => document.body.removeChild(parent);
+  const close = () => {
+    if (document.body.contains(parent)) document.body.removeChild(parent);
+  }
   ReactDOM.render(<Component onClose={close} {...props} />, parent);
   return { close, parent };
 }

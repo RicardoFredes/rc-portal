@@ -22,7 +22,10 @@ function portal(Component, props, wrapper) {
         return { error: 'Must have a Component' };
     var parent = wrapper || document.createElement('div');
     document.body.appendChild(parent);
-    var close = function () { return document.body.removeChild(parent); };
+    var close = function () {
+        if (document.body.contains(parent))
+            document.body.removeChild(parent);
+    };
     react_dom_1.default.render(react_1.default.createElement(Component, __assign({ onClose: close }, props)), parent);
     return { close: close, parent: parent };
 }

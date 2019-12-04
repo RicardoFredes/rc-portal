@@ -1,10 +1,14 @@
 # React Portal
 
-Demo: https://ricardofredes.github.io/react-portal-component/samples/
+Demo: https://ricardofredes.github.io/rc-portal/samples/
 
-```npm i rc-portal```
+```
+npm i rc-portal
+```
 or 
-```yarn add rc-portal```
+```
+yarn add rc-portal
+```
 
 Portal react is a solution for those who need to show components with a short life cycle. Example:
 - Modal
