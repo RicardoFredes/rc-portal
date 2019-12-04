@@ -12,7 +12,7 @@
   "scripts": {
     "build": "node ./bin/build",
     "build:samples": "webpack",
-    "css": "node-sass ./src/style.scss ./dist/style.css",
+    "css": "node-sass ./src/sass/style.scss ./dist/css/style.css",
     "lint": "prettier --write \"src/**/*.tsx\""
   },
   "devDependencies": {

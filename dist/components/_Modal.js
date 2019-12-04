@@ -21,25 +21,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var Modal = /** @class */ (function (_super) {
-    __extends(Modal, _super);
-    function Modal() {
+var _Modal = /** @class */ (function (_super) {
+    __extends(_Modal, _super);
+    function _Modal() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Modal.prototype.handleClick = function (event) {
+    _Modal.prototype.handleClick = function (event) {
         event.stopPropagation();
     };
-    Modal.prototype.render = function () {
+    _Modal.prototype.render = function () {
         return (react_1.default.createElement("div", { id: this.props.id, className: "_Modal", onClick: this.props.onClose.bind(this) },
             react_1.default.createElement("div", { className: "_ModalWrapper", onClick: this.handleClick.bind(this) },
                 react_1.default.createElement("div", { className: "_ModalCloseIcon", onClick: this.props.onClose.bind(this) }),
                 react_1.default.createElement("div", { className: "_ModalContent" }, this.props.children))));
     };
-    Modal.defaultProps = {
+    _Modal.defaultProps = {
         id: '_modal',
         onClose: function () { return console.error(new Error('Must have a onClose Function')); }
     };
-    return Modal;
+    return _Modal;
 }(react_1.PureComponent));
-exports.default = Modal;
-//# sourceMappingURL=Modal.js.map
+exports.default = _Modal;
+//# sourceMappingURL=_Modal.js.map

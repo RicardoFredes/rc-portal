@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Modal from '../dist/Modal.js';
-import portal from '../dist/index.js';
+import portal, { Modal } from '../dist/index.js';
 
 class App extends React.PureComponent {
   render() {

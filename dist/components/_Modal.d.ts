@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-export default class Modal extends PureComponent {
+export default class _Modal extends PureComponent {
     props: {
         onClose: Function;
         children: any;
