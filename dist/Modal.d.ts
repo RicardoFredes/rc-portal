@@ -7,6 +7,7 @@ export default class Modal extends PureComponent {
     };
     static defaultProps: {
         id: string;
+        onClose: () => void;
     };
     handleClick(event: Event): void;
     render(): JSX.Element;

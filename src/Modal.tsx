@@ -1,30 +1,36 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from 'react';
 
 export default class Modal extends PureComponent {
   props: {
-    onClose: Function
-    children: any
-    id: string
-  }
+    onClose: Function;
+    children: any;
+    id: string;
+  };
 
   static defaultProps = {
-    id: '_modal'
-  }
+    id: '_modal',
+    onClose: () => console.error(new Error('Must have a onClose Function'))
+  };
 
   handleClick(event: Event) {
-    event.stopPropagation()
+    event.stopPropagation();
   }
 
   render() {
     return (
-      <div id={this.props.id} className="_Modal" onClick={this.props.onClose.bind(this)}>
+      <div
+        id={this.props.id}
+        className="_Modal"
+        onClick={this.props.onClose.bind(this)}
+      >
         <div className="_ModalWrapper" onClick={this.handleClick.bind(this)}>
-          <div className="_ModalCloseIcon" onClick={this.props.onClose.bind(this)} />
-          <div className="_ModalContent">
-            {this.props.children}
-          </div>
+          <div
+            className="_ModalCloseIcon"
+            onClick={this.props.onClose.bind(this)}
+          />
+          <div className="_ModalContent">{this.props.children}</div>
         </div>
       </div>
-    )
+    );
   }
 }
