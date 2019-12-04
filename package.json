@@ -1,6 +1,6 @@
 {
-  "name": "react-portal-component",
-  "version": "1.2.0",
+  "name": "rc-portal",
+  "version": "1.0.0",
   "main": "src/index.tsx",
   "keywords": [
     "react",
