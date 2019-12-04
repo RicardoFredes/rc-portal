@@ -4,16 +4,16 @@ Demo: https://ricardofredes.github.io/react-portal-component/samples/
 
 `npm i --save rc-portal` or `yarn add rc-portal`
 
-Portal react is a solution for who need show components with a short cicle life:
+Portal react is a solution for those who need to show components with a short life cycle. Example:
 - Modal
 - Notifications
 - Tooltip
-_ Print elements
+- Print elements
 
 
 ## How to use
 
-The interface to use the rc-portal is very simple:
+To use the rc-portal is very simple:
 
 ```jsx
 import React from 'react';
@@ -46,7 +46,7 @@ function MyPortalComponent({ onClose }) {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-You can pass props when call to your portal component:
+You can pass props when calling your portal component:
 
 ```jsx
 import React from 'react';
@@ -78,4 +78,3 @@ function MyPortalComponent({ onClose, title }) {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
-
