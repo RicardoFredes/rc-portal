@@ -18,7 +18,7 @@ To use the rc-portal is very simple:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import portal from '../dist/index.js';
+import portal from 'rc-portal';
 
 class App extends React.PureComponent {
   render() {
