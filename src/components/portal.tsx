@@ -12,6 +12,6 @@ export default function portal(
   const close = () => {
     if (document.body.contains(parent)) document.body.removeChild(parent);
   }
-  ReactDOM.render(<Component onClose={close} {...props} />, parent);
+  ReactDOM.render(<Component close={close} {...props} />, parent);
   return { close, parent };
 }

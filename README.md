@@ -40,11 +40,11 @@ class App extends React.PureComponent {
   }
 }
 
-function MyPortalComponent({ onClose }) {
+function MyPortalComponent({ close }) {
   return (
     <div>
       <h3>Hello Portal!</h3>
-      <button onClick={onClose}>Ok</button>
+      <button onClick={close}>Ok</button>
     </div>
   );
 }
@@ -73,11 +73,11 @@ class App extends React.PureComponent {
   }
 }
 
-function MyPortalComponent({ onClose, title }) {
+function MyPortalComponent({ close, title }) {
   return (
     <div>
       <h3>{title}</h3>
-      <button onClick={onClose}>Ok</button>
+      <button onClick={close}>Ok</button>
     </div>
   );
 }
@@ -112,11 +112,11 @@ class App extends React.PureComponent {
   }
 }
 
-function MyPortalComponent({ onClose }) {
+function MyPortalComponent({ close }) {
   return (
     <div>
       <h3>My Portal</h3>
-      <button onClick={onClose}>Ok</button>
+      <button onClick={close}>Ok</button>
     </div>
   );
 }
@@ -151,11 +151,11 @@ class App extends React.PureComponent {
   }
 }
 
-function MyPortalComponent({ onClose }) {
+function MyPortalComponent({ close }) {
   return (
     <div>
       <h3>My Portal</h3>
-      <button onClick={onClose}>Ok</button>
+      <button onClick={close}>Ok</button>
     </div>
   );
 }

@@ -28,12 +28,12 @@ class App extends React.PureComponent {
   }
 }
 
-function MyPortalComponent({ onClose, id, title }) {
+function MyPortalComponent({ close, id, title }) {
   return (
-    <Modal id={id} onClose={onClose}>
+    <Modal id={id} close={close}>
       <h3>{title}</h3>
       <p>Lore ipsum on dolor...</p>
-      <button onClick={onClose}>Ok</button>
+      <button onClick={close}>Ok</button>
     </Modal>
   );
 }

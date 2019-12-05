@@ -26,7 +26,7 @@ function portal(Component, props, wrapper) {
         if (document.body.contains(parent))
             document.body.removeChild(parent);
     };
-    react_dom_1.default.render(react_1.default.createElement(Component, __assign({ onClose: close }, props)), parent);
+    react_dom_1.default.render(react_1.default.createElement(Component, __assign({ close: close }, props)), parent);
     return { close: close, parent: parent };
 }
 exports.default = portal;

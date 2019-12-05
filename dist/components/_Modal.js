@@ -30,14 +30,14 @@ var _Modal = /** @class */ (function (_super) {
         event.stopPropagation();
     };
     _Modal.prototype.render = function () {
-        return (react_1.default.createElement("div", { id: this.props.id, className: "_Modal", onClick: this.props.onClose.bind(this) },
+        return (react_1.default.createElement("div", { id: this.props.id, className: "_Modal", onClick: this.props.close.bind(this) },
             react_1.default.createElement("div", { className: "_ModalWrapper", onClick: this.handleClick.bind(this) },
-                react_1.default.createElement("div", { className: "_ModalCloseIcon", onClick: this.props.onClose.bind(this) }),
+                react_1.default.createElement("div", { className: "_ModalCloseIcon", onClick: this.props.close.bind(this) }),
                 react_1.default.createElement("div", { className: "_ModalContent" }, this.props.children))));
     };
     _Modal.defaultProps = {
         id: '_modal',
-        onClose: function () { return console.error(new Error('Must have a onClose Function')); }
+        close: function () { return console.error(new Error('Must have a close Function')); }
     };
     return _Modal;
 }(react_1.PureComponent));

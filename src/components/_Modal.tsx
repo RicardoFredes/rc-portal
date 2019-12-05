@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 
 export default class _Modal extends PureComponent {
   props: {
-    onClose: Function;
+    close: Function;
     children: any;
     id: string;
   };
 
   static defaultProps = {
     id: '_modal',
-    onClose: () => console.error(new Error('Must have a onClose Function'))
+    close: () => console.error(new Error('Must have a close Function'))
   };
 
   handleClick(event: Event) {
@@ -21,12 +21,12 @@ export default class _Modal extends PureComponent {
       <div
         id={this.props.id}
         className="_Modal"
-        onClick={this.props.onClose.bind(this)}
+        onClick={this.props.close.bind(this)}
       >
         <div className="_ModalWrapper" onClick={this.handleClick.bind(this)}>
           <div
             className="_ModalCloseIcon"
-            onClick={this.props.onClose.bind(this)}
+            onClick={this.props.close.bind(this)}
           />
           <div className="_ModalContent">{this.props.children}</div>
         </div>
