@@ -1,6 +1,6 @@
 {
   "name": "rc-portal",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -11,6 +11,14 @@
     "portal",
     "react-dom"
   ],
+  "publishConfig": { 
+    "registry": "https://www.npmjs.com/package/rc-portal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicardoFredes/rc-portal.git"
+  },
+  "homepage": "https://github.com/RicardoFredes/rc-portal",
   "author": "Fredes",
   "license": "MIT",
   "scripts": {
