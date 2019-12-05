@@ -97,7 +97,7 @@ import rcPortal from 'rc-portal';
 class App extends React.PureComponent {
   handleClick() {
     const { close, parent } = rcPortal(MyPortalComponent)
-    console.log(parent)     // show the parent element
+    console.log(parent)     // show the parent element: body
     setTimeout(close, 5000) // close the portal
   }
 
@@ -135,6 +135,7 @@ class App extends React.PureComponent {
   handleClick() {
     const myParent = document.createElement('div')
     myParent.id = 'my-parent'
+    document.body.append(myParent)
     const { close, parent } = rcPortal(MyPortalComponent, {}, myParent)
     console.log(parent === myParent)     // show true
     setTimeout(close, 5000)              // close the portal

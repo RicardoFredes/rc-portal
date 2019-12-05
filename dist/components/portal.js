@@ -16,18 +16,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
-function portal(Component, props, wrapper) {
+function portal(Component, props, parent) {
     if (props === void 0) { props = {}; }
     if (!Component)
         return { error: 'Must have a Component' };
-    var parent = wrapper || document.createElement('div');
-    document.body.appendChild(parent);
-    var close = function () {
-        if (document.body.contains(parent))
-            document.body.removeChild(parent);
-    };
-    react_dom_1.default.render(react_1.default.createElement(Component, __assign({ close: close }, props)), parent);
-    return { close: close, parent: parent };
+    var nodeParent = parent || document.body;
+    var wrapper = getWrapper();
+    nodeParent.appendChild(wrapper);
+    var close = function () { return closePortal(nodeParent, wrapper); };
+    react_dom_1.default.render(react_1.default.createElement(Component, __assign({ close: close }, props)), wrapper);
+    return { close: close, parent: wrapper };
 }
 exports.default = portal;
+function getWrapper() {
+    var wrapper = document.createElement('div');
+    wrapper.id = 'rc-portal-' + Math.ceil(Math.random() * 100);
+    return wrapper;
+}
+function closePortal(nodeParent, wrapper) {
+    if (!nodeParent.contains(wrapper))
+        return false;
+    nodeParent.removeChild(wrapper);
+    return true;
+}
 //# sourceMappingURL=portal.js.map

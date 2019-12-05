@@ -4,8 +4,9 @@ import rcPortal, { Modal } from '../dist/index.js';
 
 class App extends React.PureComponent {
   handleClick() {
-    const { close, parent } = rcPortal(MyPortalComponent);
-    console.log(parent); // show the parent element
+    const myWrapper = document.getElementById('portal');
+    const { close, parent } = rcPortal(MyPortalComponent, {}, myWrapper);
+    console.log(parent); // show the parent element: default is document.body
     setTimeout(close, 5000); // close the portal
   }
 

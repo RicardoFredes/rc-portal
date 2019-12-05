@@ -4,14 +4,25 @@ import ReactDOM from 'react-dom';
 export default function portal(
   Component: Function,
   props: object = {},
-  wrapper: any
+  parent?: any
 ): object {
   if (!Component) return { error: 'Must have a Component' };
-  const parent = wrapper || document.createElement('div');
-  document.body.appendChild(parent);
-  const close = () => {
-    if (document.body.contains(parent)) document.body.removeChild(parent);
-  }
-  ReactDOM.render(<Component close={close} {...props} />, parent);
-  return { close, parent };
+  const nodeParent = parent || document.body
+  const wrapper = getWrapper();
+  nodeParent.appendChild(wrapper);
+  const close = () => closePortal(nodeParent, wrapper)
+  ReactDOM.render(<Component close={close} {...props} />, wrapper);
+  return { close, parent: wrapper };
+}
+
+function getWrapper(): any {
+  const wrapper = document.createElement('div');
+  wrapper.id = 'rc-portal-' + Math.ceil(Math.random() * 100)
+  return wrapper
+}
+
+function closePortal(nodeParent: any, wrapper: any): boolean {
+  if (!nodeParent.contains(wrapper)) return false
+  nodeParent.removeChild(wrapper)
+  return true;
 }
