@@ -11,13 +11,11 @@
     "portal",
     "react-dom"
   ],
-  "publishConfig": { 
-    "registry": "https://www.npmjs.com/package/rc-portal"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RicardoFredes/rc-portal.git"
   },
+  "bugs": "https://github.com/RicardoFredes/rc-portal",
   "homepage": "https://github.com/RicardoFredes/rc-portal",
   "author": "Fredes",
   "license": "MIT",
