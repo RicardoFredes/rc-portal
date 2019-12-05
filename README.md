@@ -123,3 +123,42 @@ function MyPortalComponent({ onClose }) {
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
+
+You can define your own parent DOM:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import rcPortal from 'rc-portal';
+
+class App extends React.PureComponent {
+  handleClick() {
+    const myParent = document.createElement('div')
+    myParent.id = 'my-parent'
+    const { close, parent } = rcPortal(MyPortalComponent, {}, myParent)
+    console.log(parent === myParent)     // show true
+    setTimeout(close, 5000)              // close the portal
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick.bind(this)}>
+          Open Modal
+        </button>
+      </div>
+    );
+  }
+}
+
+function MyPortalComponent({ onClose }) {
+  return (
+    <div>
+      <h3>My Portal</h3>
+      <button onClick={onClose}>Ok</button>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
