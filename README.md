@@ -85,9 +85,10 @@ function MyPortalComponent({ close, title }) {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-The function rcPortal return a object: `{ parent, close }` 
-- parent: DOM Element
+The function rcPortal return a object: `{ close, parent, wrapper }` 
 - close: Function
+- parent: DOM Element
+- wrapper: DOM Element created to each rcPortal
 
 ```jsx
 import React from 'react';
@@ -96,8 +97,9 @@ import rcPortal from 'rc-portal';
 
 class App extends React.PureComponent {
   handleClick() {
-    const { close, parent } = rcPortal(MyPortalComponent)
+    const { close, parent, wrapper } = rcPortal(MyPortalComponent)
     console.log(parent)     // show the parent element: body
+    console.log(wrapper)    // show the wrapper element inside parent element
     setTimeout(close, 5000) // close the portal
   }
 
@@ -136,9 +138,9 @@ class App extends React.PureComponent {
     const myParent = document.createElement('div')
     myParent.id = 'my-parent'
     document.body.append(myParent)
-    const { close, parent } = rcPortal(MyPortalComponent, {}, myParent)
-    console.log(parent === myParent)     // show true
-    setTimeout(close, 5000)              // close the portal
+    const { close, parent, wrapper } = rcPortal(MyPortalComponent, {}, myParent)
+    console.log(parent === myParent) // show true
+    setTimeout(close, 5000)          // close the portal
   }
 
   render() {
@@ -162,4 +164,16 @@ function MyPortalComponent({ close }) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+# Inseption portal
+Sometimes it is necessary to make a group of notifications, for example.
+In this case, you can call a main portal and use its return wrapper to create other portals.
+
+# Batteries
+The rc-portal will include some basic components for use. See what is already included so far:
+- Modal
+
+```jsx
+import rcPortal, { Modal } from 'rc-portal'
 ```

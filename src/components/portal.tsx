@@ -12,7 +12,7 @@ export default function portal(
   nodeParent.appendChild(wrapper);
   const close = () => closePortal(nodeParent, wrapper)
   ReactDOM.render(<Component close={close} {...props} />, wrapper);
-  return { close, parent: wrapper };
+  return { close, parent, wrapper };
 }
 
 function getWrapper(): any {
