@@ -1,3 +1,6 @@
 /// <reference types="react" />
-import { ComponentsProps } from './ComponentProps';
-export declare const Notification: ({ close, id, children }: ComponentsProps) => JSX.Element;
+declare const Notifications: {
+    (): JSX.Element;
+    open(ChildComponent: any, childComponentProps: object): import("../rcPortal").RcPortal;
+};
+export { Notifications };

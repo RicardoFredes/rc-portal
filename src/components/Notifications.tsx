@@ -17,22 +17,17 @@ const PARENT_NAME = 'rcportal-all-notifications'
 const getNotificationsWrapper = () => document.getElementById(PARENT_NAME)
 const notHasNotificationsWrapper = () => !getNotificationsWrapper()
 
-const AllNotifications = () => <div id={PARENT_NAME} className={PARENT_NAME} />
+const Notifications = () => <div id={PARENT_NAME} className={PARENT_NAME} />
 
-const addNotification = (ChildComponent, childComponentProps: object) => {
-  if (notHasNotificationsWrapper) rcPortal(AllNotifications)
+Notifications.open = (ChildComponent, childComponentProps: object) => {
+  if (notHasNotificationsWrapper) rcPortal(Notifications)
   const Component = ({ id, ...props }) => (
     <Notification id={id} close={props.close}>
       <ChildComponent {...props} />
     </Notification>
   )
   const parent = getNotificationsWrapper()
-  return setTimeout(() => {
-    return rcPortal(Component, childComponentProps, parent)
-  }, 0) 
+  return rcPortal(Component, childComponentProps, parent)
 }
-
-const Notifications = AllNotifications
-Notification.open = addNotification
 
 export { Notifications }

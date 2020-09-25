@@ -25,7 +25,6 @@ Modal.open = (ChildComponent, childComponentProps: object) => {
     </Modal>
   )
   return rcPortal(Component, childComponentProps)
-  
 }
 
 export { Modal }
