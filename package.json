@@ -1,6 +1,6 @@
 {
   "name": "rc-portal",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -20,7 +20,7 @@
   "author": "Fredes",
   "license": "MIT",
   "scripts": {
-    "build": "node ./bin/build",
+    "build": "bin/build.sh",
     "build:samples": "webpack",
     "css": "node-sass ./src/sass/style.scss ./dist/css/style.css",
     "lint": "prettier --write \"src/**/*.tsx\""
@@ -32,13 +32,13 @@
     "@babel/preset-react": "^7.7.4",
     "@types/react": "^16.9.14",
     "@types/react-dom": "^16.9.4",
-    "babel-loader": "^8.0.6",
-    "node-sass": "^4.13.0",
-    "prettier": "^1.19.1",
+    "babel-loader": "^8.1.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
     "react-scripts-ts": "^3.1.0",
-    "typescript": "^3.7.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "peerDependencies": {
     "react": "^16.12.0",

@@ -1,5 +1,5 @@
-import portal from './components/portal'
-import _Modal from './components/_Modal'
+import rcPortal from './components/rcPortal'
+export { RcPortal } from './components/rcPortal'
+export { Modal } from './components/Modal'
 
-export default portal
-export const Modal = _Modal
+export default rcPortal

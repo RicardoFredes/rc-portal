@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default function portal(
+export interface RcPortal {
+  close(): boolean
+  parent: HTMLElement
+  wrapper: HTMLElement
+}
+
+export default function rcPortal(
   Component: Function,
-  props: object = {},
-  parent?: any
-): object {
-  if (!Component) return { error: 'Must have a Component' };
+  props = {},
+  parent?: HTMLElement
+): RcPortal {
+  if (!Component) throw new Error('Must have a Component')
   const nodeParent = parent || document.body
   const wrapper = getWrapper();
   nodeParent.appendChild(wrapper);
   const close = () => closePortal(nodeParent, wrapper)
   ReactDOM.render(<Component close={close} {...props} />, wrapper);
-  return { close, parent, wrapper };
+  return { close, parent: nodeParent, wrapper };
 }
 
 function getWrapper(): any {
