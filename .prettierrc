@@ -1,4 +1,19 @@
 {
-  "trailingComma": "none",
-  "singleQuote": true
+  "arrowParens": "avoid",
+  "printWidth": 120,
+  "jsxBracketSameLine": true,
+  "singleQuote": true,
+  "semi": false,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
 }

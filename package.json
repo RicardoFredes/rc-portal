@@ -28,7 +28,7 @@
     "build": "bin/build.sh",
     "build:samples": "webpack",
     "css": "node-sass ./src/sass/style.scss ./dist/css/style.css",
-    "lint": "prettier --write \"src/**/*.tsx\""
+    "lint": "prettier --write 'src/**/*.{ts,tsx,js}'"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
