@@ -1,18 +1,11 @@
 {
   "name": "rc-portal",
   "version": "2.2.0",
+  "description": "The easy react typescript solution for creating temporary components",
   "main": "dist/index.js",
-  "files": [
-    "dist",
-    "*.md"
-  ],
-  "keywords": [
-    "react",
-    "portal",
-    "react-dom",
-    "typescript",
-    "modal"
-  ],
+  "types": "dist/index.d.ts",
+  "files": ["dist", "*.md"],
+  "keywords": ["react", "portal", "react-dom", "typescript", "modal"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RicardoFredes/rc-portal.git"
