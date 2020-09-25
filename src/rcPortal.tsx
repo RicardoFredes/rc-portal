@@ -17,13 +17,13 @@ export default function rcPortal(Component: Function, props = {}, parent?: HTMLE
   return { close, parent: nodeParent, wrapper }
 }
 
-function getWrapper(): any {
+function getWrapper(): HTMLElement {
   const wrapper = document.createElement('div')
   wrapper.id = 'rc-portal-' + Math.ceil(Math.random() * 100)
   return wrapper
 }
 
-function closePortal(nodeParent: any, wrapper: any): boolean {
+function closePortal(nodeParent: HTMLElement, wrapper: HTMLElement): boolean {
   if (!nodeParent.contains(wrapper)) return false
   nodeParent.removeChild(wrapper)
   return true

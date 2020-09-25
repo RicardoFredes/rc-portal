@@ -1,4 +1,4 @@
-import rcPortal from './components/rcPortal';
-export { RcPortal } from './components/rcPortal';
+import rcPortal from './rcPortal';
+export { RcPortal } from './rcPortal';
 export { Modal } from './components/Modal';
 export default rcPortal;
