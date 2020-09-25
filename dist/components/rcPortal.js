@@ -5,17 +5,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
 const react_dom_1 = __importDefault(require("react-dom"));
-function portal(Component, props = {}, parent) {
+function rcPortal(Component, props = {}, parent) {
     if (!Component)
-        return { error: 'Must have a Component' };
+        throw new Error('Must have a Component');
     const nodeParent = parent || document.body;
     const wrapper = getWrapper();
     nodeParent.appendChild(wrapper);
     const close = () => closePortal(nodeParent, wrapper);
     react_dom_1.default.render(react_1.default.createElement(Component, Object.assign({ close: close }, props)), wrapper);
-    return { close, parent, wrapper };
+    return { close, parent: nodeParent, wrapper };
 }
-exports.default = portal;
+exports.default = rcPortal;
 function getWrapper() {
     const wrapper = document.createElement('div');
     wrapper.id = 'rc-portal-' + Math.ceil(Math.random() * 100);
