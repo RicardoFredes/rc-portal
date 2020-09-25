@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import rcPortal, { Modal } from '../dist/index.js'
+import { Modal } from '../dist/index.js'
 
-const openSimpleModal = () => rcPortal(MyPortalComponent, { title: 'My Modal' })
+const openSimpleModal = () => Modal.open(ChildModalComponent, { title: 'My Modal' })
 
 const openTemporyModal = () => {
   const myWrapper = document.getElementById('portal')
-  const { close, parent, wrapper } = rcPortal(MyPortalComponent, { title: 'My Modal' }, myWrapper)
+  const { close, parent, wrapper } = Modal.open(ChildModalComponent, { title: 'My Modal' }, myWrapper)
   const handleClose = () => {
     const isClosed = close()
     console.debug('isClosed', isClosed)
@@ -24,12 +24,12 @@ const App = () => (
   </div>
 )
 
-const MyPortalComponent = ({ close, title }) => (
-  <Modal close={close}>
+const ChildModalComponent = ({ close, title }) => (
+  <>
     <h3>{title}</h3>
     <p>It's so ease!</p>
     <button onClick={close}>Ok</button>
-  </Modal>
+  </>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))
