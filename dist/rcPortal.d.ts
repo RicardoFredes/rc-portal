@@ -1,6 +1,13 @@
+declare type Close = () => boolean;
 export interface RcPortal {
-    close(): boolean;
+    close: Close;
     parent: HTMLElement;
     wrapper: HTMLElement;
 }
-export default function rcPortal(Component: Function, props?: {}, parent?: HTMLElement): RcPortal;
+export interface RcPortalProps {
+    closeDelay?: number;
+    duration?: number;
+    [props: string]: any;
+}
+export default function rcPortal(Component: Function, options?: RcPortalProps, parent?: HTMLElement): RcPortal;
+export {};

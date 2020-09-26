@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { ComponentsProps } from './ComponentProps';
-declare const Modal: {
-    ({ close, children, id }: ComponentsProps): JSX.Element;
+declare const Notification: {
+    ({ close, id, children }: ComponentsProps): JSX.Element;
     open(ChildComponent: any, childComponentProps: object): import("../rcPortal").RcPortal;
 };
-export { Modal };
+export { Notification };

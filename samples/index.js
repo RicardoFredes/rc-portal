@@ -1,35 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import rcPortal, { Modal } from '../dist/index.js'
+import { Modal, Notification } from '../dist/index.js'
 
-const openSimpleModal = () => rcPortal(MyPortalComponent, { title: 'My Modal' })
+const openModal = props => Modal.open(ChildModalComponent, props)
 
-const openTemporyModal = () => {
-  const myWrapper = document.getElementById('portal')
-  const { close, parent, wrapper } = rcPortal(MyPortalComponent, { title: 'My Modal' }, myWrapper)
-  const handleClose = () => {
-    const isClosed = close()
-    console.debug('isClosed', isClosed)
-  }
-  console.debug('parent', parent) // show the parent element: default is document.body
-  console.debug('wrapper', wrapper) // show the parent element: default is document.body
-  setTimeout(handleClose, 5000) // close the portal
+const openNotification = props => {
+  const options = { closeDelay: 200, ...props }
+  Notification.open(ChildNotificationComponent, options)
 }
 
-const App = () => (
-  <div>
-    <button onClick={openSimpleModal}>Open Modal</button>
-    <br />
-    <button onClick={openTemporyModal}>Modal auto close after 5s</button>
-  </div>
-)
-
-const MyPortalComponent = ({ close, title }) => (
-  <Modal close={close}>
+const ChildModalComponent = ({ close, title }) => (
+  <>
     <h3>{title}</h3>
     <p>It's so ease!</p>
     <button onClick={close}>Ok</button>
-  </Modal>
+  </>
+)
+
+const ChildNotificationComponent = () => <div>Notification - time: {Date.now()}</div>
+
+const App = () => (
+  <div>
+    <button onClick={() => openModal({ title: 'My Modal' })}>Open Modal</button>
+    <br />
+    <button onClick={() => openNotification({ duration: 2000 })}>Open Notification</button>
+  </div>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))
