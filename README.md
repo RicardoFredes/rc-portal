@@ -1,4 +1,6 @@
 # rcPortal
+The easy react typescript solution for creating temporary components
+
 See example: https://ricardofredes.github.io/rc-portal/samples/
 
 ```bash

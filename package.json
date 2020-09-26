@@ -10,9 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/RicardoFredes/rc-portal.git"
   },
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/"
-  },
   "bugs": "https://github.com/RicardoFredes/rc-portal",
   "homepage": "https://github.com/RicardoFredes/rc-portal",
   "author": "Fredes",
