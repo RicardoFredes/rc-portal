@@ -1,0 +1,73 @@
+.rcportal-notification {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+}
+
+.rcportal-notification-wrapper {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  position: relative;
+  padding: 12px 40px 12px 12px;
+  margin: 16px;
+  text-align: left;
+  animation: fadeIn 200ms, goDown 200ms;
+}
+
+.rcportal-notification-close-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px;
+  cursor: pointer;
+  svg {
+    width: 16px;
+  }
+}
+
+.rcportal-closing {
+  .rcportal-notification-wrapper {
+    animation: fadeOut 200ms, goUp 200ms;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes goDown {
+  0% {
+    transform: translateY(-32px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes goUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-32px);
+  }
+}
+

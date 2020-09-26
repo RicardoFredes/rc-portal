@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Modal, Notifications } from '../dist/index.js'
+import { Modal, Notification } from '../dist/index.js'
 
 const openModal = props => Modal.open(ChildModalComponent, props)
 
-const openNotification = ({ duration, props }) => {
-  const { close } = Notifications.open(ChildNotificationComponent, props)
-  if (duration) setTimeout(close, duration)
+const openNotification = props => {
+  const options = { closeDelay: 200, ...props }
+  Notification.open(ChildNotificationComponent, options)
 }
 
 const ChildModalComponent = ({ close, title }) => (
@@ -17,13 +17,13 @@ const ChildModalComponent = ({ close, title }) => (
   </>
 )
 
-const ChildNotificationComponent = () => <p>Notification - time: {Date.now()}</p>
+const ChildNotificationComponent = () => <div>Notification - time: {Date.now()}</div>
 
 const App = () => (
   <div>
     <button onClick={() => openModal({ title: 'My Modal' })}>Open Modal</button>
     <br />
-    <button onClick={() => openNotification({ duration: 3000 })}>Open Notification</button>
+    <button onClick={() => openNotification({ duration: 2000 })}>Open Notification</button>
   </div>
 )
 

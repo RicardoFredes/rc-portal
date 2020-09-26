@@ -14,27 +14,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Notifications = void 0;
+exports.Notification = void 0;
 const react_1 = __importDefault(require("react"));
 const CloseIcon_1 = require("./CloseIcon");
 const rcPortal_1 = __importDefault(require("../rcPortal"));
-const Notification = ({ close, id, children }) => (react_1.default.createElement("div", { id: id, className: "rcportal-notification" },
+let notificationParent;
+const PARENT_NAME = 'rcportal-notification';
+const initializeNotification = () => {
+    notificationParent = document.createElement('div');
+    notificationParent.classList.add(PARENT_NAME);
+    notificationParent.id = PARENT_NAME;
+    document.body.append(notificationParent);
+};
+const Notification = ({ close, id, children }) => (react_1.default.createElement("div", { id: id, className: "rcportal-notification-wrapper" },
     react_1.default.createElement("div", { className: "rcportal-notification-close-icon", onClick: () => close() },
         react_1.default.createElement(CloseIcon_1.CloseIcon, null)),
     react_1.default.createElement("div", { className: "rcportal-notification-content" }, children)));
-const PARENT_NAME = 'rcportal-all-notifications';
-const getNotificationsWrapper = () => document.getElementById(PARENT_NAME);
-const notHasNotificationsWrapper = () => !getNotificationsWrapper();
-const Notifications = () => react_1.default.createElement("div", { id: PARENT_NAME, className: PARENT_NAME });
-exports.Notifications = Notifications;
-Notifications.open = (ChildComponent, childComponentProps) => {
-    if (notHasNotificationsWrapper)
-        rcPortal_1.default(Notifications);
+exports.Notification = Notification;
+Notification.open = (ChildComponent, childComponentProps) => {
+    if (!notificationParent)
+        initializeNotification();
     const Component = (_a) => {
         var { id } = _a, props = __rest(_a, ["id"]);
         return (react_1.default.createElement(Notification, { id: id, close: props.close },
             react_1.default.createElement(ChildComponent, Object.assign({}, props))));
     };
-    const parent = getNotificationsWrapper();
-    return rcPortal_1.default(Component, childComponentProps, parent);
+    return rcPortal_1.default(Component, childComponentProps, notificationParent);
 };
