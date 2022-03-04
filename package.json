@@ -1,6 +1,6 @@
 {
   "name": "rc-portal",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "The easy react typescript solution for creating components with short life cycles",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
