@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ComponentsProps } from './ComponentProps';
 declare const Notification: {
     ({ close, id, children }: ComponentsProps): JSX.Element;

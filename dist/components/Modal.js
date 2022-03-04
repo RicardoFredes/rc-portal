@@ -33,5 +33,5 @@ Modal.open = (ChildComponent, childComponentProps) => {
         return (react_1.default.createElement(Modal, { id: id, close: props.close },
             react_1.default.createElement(ChildComponent, Object.assign({}, props))));
     };
-    return rcPortal_1.default(Component, childComponentProps);
+    return (0, rcPortal_1.default)(Component, childComponentProps);
 };

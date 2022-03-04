@@ -4,8 +4,17 @@
   "description": "The easy react typescript solution for creating components with short life cycles",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "*.md"],
-  "keywords": ["react", "portal", "react-dom", "typescript", "modal"],
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "keywords": [
+    "react",
+    "portal",
+    "react-dom",
+    "typescript",
+    "modal"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RicardoFredes/rc-portal.git"
@@ -22,22 +31,24 @@
     "lint:samples": "prettier --write 'samples/**/*.js'"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.7.4",
-    "@types/react": "^16.9.14",
-    "@types/react-dom": "^16.9.4",
-    "babel-loader": "^8.1.0",
-    "node-sass": "^4.14.1",
-    "prettier": "^2.1.2",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "babel-loader": "^8.2.3",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts-ts": "^3.1.0",
-    "typescript": "^4.0.3",
+    "typescript": "^4.6.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
   }
 }

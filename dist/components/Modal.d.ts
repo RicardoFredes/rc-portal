@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ComponentsProps } from './ComponentProps';
 declare const Modal: {
     ({ close, children, id }: ComponentsProps): JSX.Element;
